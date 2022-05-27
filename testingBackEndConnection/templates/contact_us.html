@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chop Chop</title>
+    <link rel="stylesheet" type = "text/css" href="{{ url_for('static', filename='contact-styles.css') }}">
+</head>
+<body>
+    <!-- This section of code represents the Navigation Bar-->
+    <section id="nav">
+        <div class="logoText">
+            <a href="{{ url_for('index') }}" class="logoTextLink">
+                <img src="{{ url_for('static', filename='Assets/logo_greyscale.png') }}" class="navLogoImg">
+                 Chop Chop
+            </a>
+        </div>
+    
+        <ul class="navLinkList">
+            <li>
+                <a href="{{ url_for('ingredients_page') }}" class="navLinkAnchor linkHoverEffect linkHoverEffectBlack">Recipe Generator</a>
+            </li>
+            <li>
+                <a href="{{ url_for('about') }}" class="navLinkAnchor linkHoverEffect linkHoverEffectBlack">About</a>
+            </li>
+            <li>
+                <a href="{{ url_for('contact_us') }}" class="navLinkAnchor navContactButton">Contact Us</a>   
+            </li>
+        </ul>
+
+    </section>
+
+    <section id="contact">
+        <div class="contactContainer">
+            <div class="formElement">
+                <label>First Name</label>
+                <input class="nameInputBox" placeholder="Your name...">
+            </div>
+
+            <div class="formElement">
+                <label>Last Name</label>
+                <input class="nameInputBox"placeholder="Your last name...">
+            </div>
+
+            <div class="formElement">
+                <label>Subject</label>
+                <textarea class="messageBox"placeholder="Write something..."></textarea>
+            </div>
+
+            <input class="submitButton" type= "submit" value="Submit">
+        </div>
+    </section>
+
+</body>
+</html>

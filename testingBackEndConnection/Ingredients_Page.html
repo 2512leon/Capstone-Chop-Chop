@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chop Chop</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='ingredients-styles.css') }}">
+    <script src="{{ url_for('static', filename='ingredients_page_javascript.js') }}"></script>
+</head>
+<body>
+
+    <!-- This section of code represents the Navigation Bar-->
+    <nav>
+        <div class="logoText">
+            <a href="./index.html">
+                <img src="{{ url_for('static', filename='Assets/logo_greyscale.png') }}" class="navLogoImg">
+                 Chop Chop
+            </a>
+        </div>
+    
+        <ul class="navLinkList">
+            <li>
+                <a href="" class="navLinkAnchor linkHoverEffect linkHoverEffectBlack">Recipe Generator</a>
+            </li>
+            <li>
+                <a href="" class="navLinkAnchor linkHoverEffect linkHoverEffectBlack">About</a>
+            </li>
+            <li>
+                <a href="" class="navLinkAnchor navContactButton">Contact Us</a>   
+            </li>
+        </ul>
+    </nav>
+
+
+    <input type="text" id="ingredientSearchBar" placeholder="Search Ingredients...">
+
+    <div class="ingredientsContainer">
+        <table id="imgTable">
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+        </table>
+    </div>
+    
+    <!-- <footer>
+        <div class="row footerRow">
+            <a href="#" class="footerAnchor">
+                <figure class="footerLogo">
+                    <img src="./Assets/logo.png" class="footerLogoImg" alt="Need to place logo here">
+                </figure>
+                <span class="footerLogoPopper">
+                    Top ↑
+                </span>
+            </a>
+            <div class="footerChopChop"> Chop Chop</div>
+            <div class="footerCopyright"> Copyright © 2022</div>
+        </div>
+    </footer> -->
+</body>
+</html>

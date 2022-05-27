@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chop Chop</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='ingredients-styles.css') }}">
+    <script src="{{ url_for('static', filename='ingredients_page_javascript.js') }}"></script>
+</head>
+<body>
+
+    <!-- This section of code represents the Navigation Bar-->
+    <section id="nav">
+        <div class="logoText">
+            <a href="{{ url_for('index') }}">
+                <img src="{{ url_for('static', filename='Assets/logo_greyscale.png') }}" class="navLogoImg">
+                 Chop Chop
+            </a>
+        </div>
+    
+        <ul class="navLinkList">
+            <li>
+                <a href="{{ url_for('ingredients_page') }}" class="navLinkAnchor linkHoverEffect linkHoverEffectBlack">Recipe Generator</a>
+            </li>
+            <li>
+                <a href="{{ url_for('about') }}" class="navLinkAnchor linkHoverEffect linkHoverEffectBlack">About</a>
+            </li>
+            <li>
+                <a href="{{ url_for('contact_us') }}" class="navLinkAnchor navContactButton">Contact Us</a>   
+            </li>
+        </ul>
+    </section>
+
+
+    <div class="ingredientsContainer">
+        <table id="imgTable">
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+            <tr></tr>
+        </table>
+    </div>
+
+    <div class="allergens">
+        <h1 class="allergenHeader">Any allergens?</h1>
+        <form class="allegensOptionsForm"> 
+            <div class="row">
+                <div class="column">
+                    <div class="option">
+                        <input type="checkbox" id="milk" onclick="allergenClick(id)"
+                        name="allergen" value="milk">
+                        <label for="milk">Milk</label>
+                    </div>
+                </div>
+        
+                <div class="column">
+                    <div class="option">
+                        <input type="checkbox" id="eggs" onclick="allergenClick(id)"
+                        name="allergen" value="milk">
+                        <label for="eggs">Eggs</label>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="option">
+                        <input type="checkbox" id="fish" onclick="allergenClick(id)"
+                        name="allergen" value="fish">
+                        <label for="fish">Fish</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="column">
+                    <div class="option">
+                        <input type="checkbox" id="crustacean" onclick="allergenClick(id)"
+                        name="allergen" value="crustacean">
+                        <label for="crustacean">Crustacean Shellfish</label>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="option">
+                        <input type="checkbox" id="treenuts" onclick="allergenClick(id)"
+                        name="allergen" value="treenuts">
+                        <label for="treenuts">Tree nuts</label>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="option">
+                        <input type="checkbox" id="peanut" onclick="allergenClick(id)"
+                        name="allergen" value="peanut">
+                        <label for="peanut">Peanuts</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="column">
+                    <div class="option">
+                        <input type="checkbox" id="wheat" onclick="allergenClick(id)"
+                        name="allergen" value="wheat">
+                        <label for="wheat">Wheat</label>
+                    </div>
+                </div>
+
+                <div class="column">
+                    <div class="option">
+                        <input type="checkbox" id="soybean" onclick="allergenClick(id)"
+                        name="allergen" value="soybean">
+                        <label for="soybean">Soybeans</label>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <h1 class="cookTimeHeader">Time?</h1>
+
+    <div class="cookTime">
+        <div class="timerButtonContainer">
+            <button id="timerButton15" class="timerButton" onclick="timerClick('timerButton15', 15)">
+                15 minutes
+                <figure>
+                    <img src="" class="timerImg">
+                </figure>
+            </button>
+        </div>
+        <div class="timerButtonContainer">
+            <button id="timerButton30" class="timerButton" onclick="timerClick('timerButton30',30)">
+                30 minutes
+                <figure>
+                    <img src="" class="timerImg">
+                </figure>
+            </button>
+        </div>
+        <div class="timerButtonContainer">
+            <button id="timerButton45" class="timerButton" onclick="timerClick('timerButton45',45)">
+                45 minutes
+                <figure>
+                    <img src="" class="timerImg">
+                </figure>
+            </button>
+        </div>
+        <div class="timerButtonContainer">
+            <button id="timerButton60" class="timerButton" onclick="timerClick('timerButton60',60)">
+                60 minutes
+                <figure>
+                    <img src="" class="timerImg">
+                </figure>
+            </button>
+        </div>
+        <div class="timerButtonContainer">
+            <button id="timerButton75" class="timerButton" onclick="timerClick('timerButton75',75)">
+                60+ minutes
+                <figure>
+                    <img src="" class="timerImg">
+                </figure>
+            </button>
+        </div>
+    </div>
+
+    <button class="generateButton" onclick="submitButtonClick()">Generate Recipes</button>
+    
+    <!-- <footer>
+        <div class="row footerRow">
+            <a href="#" class="footerAnchor">
+                <figure class="footerLogo">
+                    <img src="./Assets/logo.png" class="footerLogoImg" alt="Need to place logo here">
+                </figure>
+                <span class="footerLogoPopper">
+                    Top ↑
+                </span>
+            </a>
+            <div class="footerChopChop"> Chop Chop</div>
+            <div class="footerCopyright"> Copyright © 2022</div>
+        </div>
+    </footer> -->
+</body>
+</html>

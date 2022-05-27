@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chop Chop</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='index-styles.css') }}">
+</head>
+
+<body>
+    <!-- This section of code represents the Navigation Bar-->
+    <section id="nav">
+        <div class="logoText">
+            <a href="{{ url_for('index') }}" class="logoTextLink">
+                <img src="{{ url_for('static', filename='Assets/logo_greyscale.png') }}" class="navLogoImg">
+                 Chop Chop
+            </a>
+        </div>
+    
+        <ul class="navLinkList">
+            <li>
+                <a href="{{ url_for('ingredients_page') }}" class="navLinkAnchor linkHoverEffect linkHoverEffectBlack">Recipe Generator</a>
+            </li>
+            <li>
+                <a href="{{ url_for('about') }}" class="navLinkAnchor linkHoverEffect linkHoverEffectBlack">About</a>
+            </li>
+            <li>
+                <a href="{{ url_for('contact_us') }}" class="navLinkAnchor navContactButton">Contact Us</a>   
+            </li>
+        </ul>
+    </section>
+
+    <!-- This section formats the welcome info for the homepage-->
+    <section id="welcome">
+        <div class="welcomeInfo row">
+            <div class="welcomeInfoContainer">
+                <h1 class="welcomeInfoTitle">
+                    Welcome.
+                </h1>
+                <p class="welcomeInfoPara">
+                    Food is about to get a whole lot easier! With Chop Chop, you can get recipe recommendations based on your preferences such as the ingredients you have at home, amount of time you have available, and your favorite cuisine!
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- This section will format the search bar-->
+    <section id="search">
+        <div class="searchBarContainer">
+            <h1 class="searchBarTitle">
+                Search for a recipe here!
+            </h1>
+            <div class="bar">
+                <input id="recipe" class="searchBar" type="search" onkeypress="handle(event)" placeholder="Search for a recipe or ingredient to get started..."/>
+                <script>
+                    
+                    function handle(e){
+                        recipe = document.getElementById("recipe").value;
+                        var recipeOutString = recipe.replace(/[`~!@#$%^&*()_|+\-=?;:'",.<>\{\}\[\]\\\/]/gi, '');
+                        if(e.keyCode == 13){
+                            //alert("You looked for: " + recipe);
+                            fetch('http://localhost:5000/search_recipes?recipe='+recipeOutString)
+                            .then((response) => {
+                                return response.json();
+                            })
+                            .then((myJson) => {
+                                var ex = JSON.stringify(myJson.result)
+                                console.log("Current recipes: " + ex);
+                            })
+
+                            window.location.href = "{{ url_for('recipe_page') }}";
+                        }
+                    }
+
+                    fetch('http')
+
+                </script>
+            </div>
+        </div>
+    </section>
+
+    <!--
+    <section id="footer">
+        <div class="row footerRow">
+            <a href="#" class="footerAnchor">
+                <figure class="footerLogo">
+                    <img src="./Assets/logo.png" class="footerLogoImg" alt="logo">
+                </figure>
+                <span class="footerLogoPopper">
+                    Top↑
+                </span>
+            </a>
+            <div class="footerChopChop">Chop Chop</div>
+            <div class="footerCopyright">Copyright © 2022</div>
+        </div>
+    </section>
+    -->
+</body>
+</html>

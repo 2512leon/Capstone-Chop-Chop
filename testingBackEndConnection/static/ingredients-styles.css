@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+
+/* What's enclosed with * applies to everything on the page */
+*{
+    font-family: 'Amatic SC', cursive;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+h1, h2, h3, h4, h5, h6, span{
+    color: #242424;
+    text-align: center;
+    line-height: 1.25;
+}
+
+p{
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style-type: none;
+}
+
+.row{
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 12px;
+}
+
+section{
+    padding: 12px;
+}
+
+/* Navigation Bar */
+#nav{
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navLogoImg{
+    width: 52px;
+    height: 10%;
+}
+
+.navLinkList{
+    display: flex;
+    font-size: 32px;
+}
+
+.navLinkAnchor{
+    margin: 0 12px;
+    color: #242424;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.navContactButton{
+    background-color: #242424;
+    padding: 8px 20px;
+    border-radius: 50px;
+    color: white;
+    transition: all 300ms ease;
+}
+
+.navContactButton:hover{
+    background-color:#3a3a3a;
+}
+
+.logoText{
+    font-size: 24px;
+    color: #242424;
+    margin: 0 12px;
+    font: bold;
+}
+
+.logoTextLink{
+    text-decoration: none;
+}
+
+.logoTextLink:visited {
+    color: #242424;
+}
+
+/* img table */
+.ingredientsContainer{
+    padding-top: 12px;
+    padding-left: 100px;
+}
+
+#imgTable{
+    border-radius: 8px;
+    width:800px;
+}
+
+.buttonContainer{
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    font-size: 25px;
+}
+
+.buttonContainer:focus{
+    background-color: #ddffdd;
+  }
+
+.imgTableTD:hover {
+    background-color: #ddffdd;          
+}
+
+.imgTableTD{
+    border-radius: 8px;
+    border: 1px solid grey;
+    width: 50px;
+    height: 50px;
+}
+
+.imgTableTDcontainer {
+    position: relative;
+    text-align: center;
+    height: 100%;
+    width: 100%;
+    color: rgb(255, 0, 0);
+  }
+
+  .tdCenter {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .ingredientImg {
+    border-radius: 5px;
+    object-fit: cover;
+    width: 50%;
+    height: 100%;
+  }
+
+/* Allergens Form */
+.allegensOptionsForm{
+    position: absolute;
+    top: 25%;
+    right: 15%;
+    font-size: 25px;
+}
+
+.allergenHeader{
+    position: absolute;
+    top: 20%;
+    right: 13%;
+    font-size: 45px;
+}
+
+/* Timer buttons */
+.cookTimeHeader{
+    position: absolute;
+    top: 53%;
+    right: 20%;
+    font-size: 45px;
+}
+
+.cookTime{
+    position: absolute;
+    top: 58%;
+    right: 20%;
+}
+
+.timerButton{
+    font-size: 23px;
+    width: 80px;
+    border-radius:5px;
+    border-color: black;
+    background-color:transparent;
+    cursor: pointer;
+}
+
+.timerButtonContainer{
+    margin:8px;
+    font-size: 23px;
+    width: 80px;
+    border-radius:5px;
+    border-color: black;
+    background-color: white;
+}
+
+.timerButtonContainer:hover{
+    background-color: #ddffdd;
+}
+
+/* Generate Button */
+.generateButton{
+    position: absolute;
+    top: 100%;
+    right: 17%;
+    font-size: 25px;
+}
+
+.generateButton{
+    background-color: #242424;
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 16px;
+    transition: all 300ms ease;
+}
+
+.generateButton:hover{
+    background-color: #3a3a3a;
+}
