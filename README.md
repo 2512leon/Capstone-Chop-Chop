@@ -1,2 +1,8 @@
-# Capstone-Chop-Chop
-This was my capstone project that my team and I worked on as part of CSE5914.
+# CSE5914
+Capstone Project: Chop Chop
+
+Hi, this is Tushar
+
+This is Leon
+
+Branch test
